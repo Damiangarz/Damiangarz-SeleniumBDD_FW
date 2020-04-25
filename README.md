@@ -24,3 +24,6 @@ I can change Nintendo switch console for X Box console and now the test would se
 
 Now this test procedure is going to search for a x box console
 
+To check the execution reports go to target/surefire-reports search for:
+index.html or emailable-report.html and open in any web browser
+
