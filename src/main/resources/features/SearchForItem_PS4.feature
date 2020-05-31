@@ -6,7 +6,7 @@ Feature: Search for a ps4 console
 
   Scenario: Search for a ps4 console
     Given I navigate into "https://www.amazon.com.mx/" website
-    When I enter "playstation 4" as search criteria
+    When I enter "playstation 4 console" as search criteria
     And click on the search button
     Then I want to click on the first item
     When the item page is displayed I capture the price
@@ -14,6 +14,4 @@ Feature: Search for a ps4 console
     And I click on Kart button
     Then I compare the prices
     When I click on Delete button
-    Then A confirmation message is displayed "Tu carrito de Amazon está vacío"
-
-
+    Then The Shoopping kart displays "0"

@@ -26,7 +26,7 @@ public class SearchItemSteps {
 
     @When("click on the search button")
     public void click_on_the_search_button() {
-        homePageActions.clickOnSearchButon();
+        homePageActions.clickOnSearchButton();
     }
 
     @Then("I want to click on the first item")
@@ -42,7 +42,6 @@ public class SearchItemSteps {
     @When("I click on add to kart button")
     public void i_click_on_add_to_kart_button() {
         itemPageActions.clickOnAddToKartBtn();
-
     }
 
     @When("I click on Kart button")
@@ -52,9 +51,21 @@ public class SearchItemSteps {
 
     @Then("I compare the prices")
     public void i_compare_the_prices() {
-        String itemPagePrice = itemPageActions.getItemPagePrice();
-        String shopKartPrice = shoppingKartActions.getShopKartPrice();
-        Assert.assertEquals(shopKartPrice,itemPagePrice);
+        char[] itemPagePrice = itemPageActions.getItemPagePrice().toCharArray();
+        char[] shopKartPrice = shoppingKartActions.getShopKartPrice().toCharArray();
+
+        String itemPagePrice_f = "";
+        String shopKartPrice_f = "";
+
+        for (char chars : itemPagePrice) {
+            if (Character.isDigit(chars)) itemPagePrice_f += chars;
+        }
+
+        for (char chars : shopKartPrice) {
+            if (Character.isDigit(chars)) shopKartPrice_f += chars;
+        }
+
+        Assert.assertEquals(itemPagePrice_f, shopKartPrice_f);
     }
 
     @When("I click on Delete button")
@@ -62,9 +73,10 @@ public class SearchItemSteps {
         shoppingKartActions.clickOnDelete();
     }
 
-    @Then("A confirmation message is displayed {string}")
-    public void a_confirmation_message_is_displayed(String expectedMsg) {
-        String actualMsg = shoppingKartActions.getConfirmationMsg();
-        Assert.assertEquals(actualMsg, expectedMsg);
+    @Then("The Shoopping kart displays {string}")
+    public void a_confirmation_message_is_displayed(String itemsInKart) {
+        String actualItemsInKart = shoppingKartActions.getConfirmationMsg();
+        //Assert.assertEquals(shoppingKartActions.getConfirmationMsg(), itemsInKart);
+        Assert.assertEquals(actualItemsInKart, itemsInKart);
     }
 }

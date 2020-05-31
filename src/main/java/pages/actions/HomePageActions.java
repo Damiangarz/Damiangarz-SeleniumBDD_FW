@@ -16,7 +16,7 @@ public class HomePageActions {
         homePageLocators.searchBox.sendKeys(item);
     }
 
-    public void clickOnSearchButon(){
+    public void clickOnSearchButton(){
         homePageLocators.searchButton.click();
     }
 }

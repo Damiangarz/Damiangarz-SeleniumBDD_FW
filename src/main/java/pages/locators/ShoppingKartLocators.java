@@ -5,12 +5,20 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
 public class ShoppingKartLocators {
-    @FindBy(how = How.XPATH, using = "//div/div[2]/p/span")
+    @FindBy(how = How.CSS, using = ".sc-product-price")
     public WebElement shopKartPrice;
 
-    @FindBy(how = How.XPATH, using = "//input[@value='Eliminar']")
+    //@FindBy(how = How.XPATH, using = "//input[@value='Eliminar']")
+    //@FindBy(how = How.CSS, using = ".sc-action-delete span input")
+    @FindBy(how = How.CSS, using = "input[value=Eliminar]")
     public WebElement deleteBtn;
+/*
+    //@FindBy(how = How.CSS, using = ".sc-your-amazon-cart-is-empty h2")
+    @FindBy(how = How.CSS, using = ".sc-your-amazon-cart-is-empty")
+    public WebElement confirmationMsg; //@FindBy(how = How.CSS, using = ".sc-your-amazon-cart-is-empty h2")
+    */
 
-    @FindBy(how = How.XPATH, using = "//h2[contains(text(),'Tu carrito de Amazon está vacío')]")
-    public WebElement confirmationMsg;
+    @FindBy(how = How.ID, using = "nav-cart-count")
+    public WebElement itemsInKart;
+
 }

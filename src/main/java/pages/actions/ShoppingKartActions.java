@@ -22,8 +22,7 @@ public class ShoppingKartActions {
     }
 
     public String getConfirmationMsg(){
-        String confirmationMsg = shoppingKartLocators.confirmationMsg.getText();
-        return confirmationMsg;
+        String itemsInKart = shoppingKartLocators.itemsInKart.getText();
+        return itemsInKart;
     }
-
 }

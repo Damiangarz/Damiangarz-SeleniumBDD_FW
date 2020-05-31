@@ -16,5 +16,4 @@ public class ResultsPageActions {
     public void clickOnItem(){
         resultsPageLocators.priceList.get(0).click();
     }
-
 }
