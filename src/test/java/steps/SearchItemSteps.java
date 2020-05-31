@@ -76,7 +76,6 @@ public class SearchItemSteps {
     @Then("The Shoopping kart displays {string}")
     public void a_confirmation_message_is_displayed(String itemsInKart) {
         String actualItemsInKart = shoppingKartActions.getConfirmationMsg();
-        //Assert.assertEquals(shoppingKartActions.getConfirmationMsg(), itemsInKart);
         Assert.assertEquals(actualItemsInKart, itemsInKart);
     }
 }
