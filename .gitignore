@@ -115,3 +115,7 @@ bazel-testlogs
 
 /.vscode/
 /.scannerwork/
+
+.classpath
+.project
+.settings/
