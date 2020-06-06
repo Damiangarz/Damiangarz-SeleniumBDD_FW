@@ -12,7 +12,7 @@ public class GoToCartActions {
         PageFactory.initElements(SeleniumDriver.getDriver(),goToCartLocators);
     }
 
-    public void clickOnGoTokart(){
+    public void clickOnGoToCart(){
         goToCartLocators.goToCartBtn.click();
     }
 }

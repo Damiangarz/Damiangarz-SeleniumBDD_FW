@@ -24,7 +24,7 @@ public class SearchItemSteps {
         homePageActions.enterSearchItem(item);
     }
 
-    @When("click on the search button")
+    @When("click on the Search Button")
     public void click_on_the_search_button() {
         homePageActions.clickOnSearchButton();
     }
@@ -34,22 +34,22 @@ public class SearchItemSteps {
         resultsPageActions.clickOnItem();
     }
 
-    @When("the item page is displayed I capture the price")
+    @When("the item page is displayed I capture the Price")
     public void the_item_page_is_displayed_I_capture_the_price() {
         itemPageActions.captureItemPagePrice();
     }
 
-    @When("I click on Add to Cart button")
+    @When("I click on Add to Cart Button")
     public void i_click_on_add_to_kart_button() {
         itemPageActions.clickOnAddToCartBtn();
     }
 
-    @When("I click on Cart button")
+    @When("I click on Cart Button")
     public void i_click_on_Cart_button() {
-        goToCartActions.clickOnGoTokart();
+        goToCartActions.clickOnGoToCart();
     }
 
-    @Then("I compare the prices")
+    @Then("I compare the Prices")
     public void i_compare_the_prices() {
         char[] itemPagePrice = itemPageActions.getItemPagePrice().toCharArray();
         char[] shopCartPrice = shoppingCartActions.getShopCartPrice().toCharArray();
@@ -68,7 +68,7 @@ public class SearchItemSteps {
         Assert.assertEquals(itemPagePrice_f, shopCartPrice_f);
     }
 
-    @When("I click on Delete button")
+    @When("I click on Delete Button")
     public void i_click_on_Delete_button() {
         shoppingCartActions.clickOnDelete();
     }
