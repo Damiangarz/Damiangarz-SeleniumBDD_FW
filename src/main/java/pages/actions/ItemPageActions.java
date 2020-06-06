@@ -20,7 +20,7 @@ public class ItemPageActions {
         return itemPagePrice;
     }
 
-    public void clickOnAddToKartBtn(){
-        itemPageLocators.addToKartBtn.click();
+    public void clickOnAddToCartBtn(){
+        itemPageLocators.addToCartBtn.click();
     }
 }

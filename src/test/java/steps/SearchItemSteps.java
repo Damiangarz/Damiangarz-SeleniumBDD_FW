@@ -11,8 +11,8 @@ public class SearchItemSteps {
     HomePageActions homePageActions = new HomePageActions();
     ResultsPageActions resultsPageActions = new ResultsPageActions();
     ItemPageActions itemPageActions = new ItemPageActions();
-    GoToKartActions goToKartActions = new GoToKartActions();
-    ShoppingKartActions shoppingKartActions = new ShoppingKartActions();
+    GoToCartActions goToCartActions = new GoToCartActions();
+    ShoppingCartActions shoppingCartActions = new ShoppingCartActions();
 
     @Given("I navigate into {string} website")
     public void i_navigate_into_website(String url) {
@@ -39,43 +39,43 @@ public class SearchItemSteps {
         itemPageActions.captureItemPagePrice();
     }
 
-    @When("I click on add to kart button")
+    @When("I click on Add to Cart button")
     public void i_click_on_add_to_kart_button() {
-        itemPageActions.clickOnAddToKartBtn();
+        itemPageActions.clickOnAddToCartBtn();
     }
 
-    @When("I click on Kart button")
-    public void i_click_on_Kart_button() {
-        goToKartActions.clickOnGoTokart();
+    @When("I click on Cart button")
+    public void i_click_on_Cart_button() {
+        goToCartActions.clickOnGoTokart();
     }
 
     @Then("I compare the prices")
     public void i_compare_the_prices() {
         char[] itemPagePrice = itemPageActions.getItemPagePrice().toCharArray();
-        char[] shopKartPrice = shoppingKartActions.getShopKartPrice().toCharArray();
+        char[] shopCartPrice = shoppingCartActions.getShopCartPrice().toCharArray();
 
         String itemPagePrice_f = "";
-        String shopKartPrice_f = "";
+        String shopCartPrice_f = "";
 
         for (char chars : itemPagePrice) {
             if (Character.isDigit(chars)) itemPagePrice_f += chars;
         }
 
-        for (char chars : shopKartPrice) {
-            if (Character.isDigit(chars)) shopKartPrice_f += chars;
+        for (char chars : shopCartPrice) {
+            if (Character.isDigit(chars)) shopCartPrice_f += chars;
         }
 
-        Assert.assertEquals(itemPagePrice_f, shopKartPrice_f);
+        Assert.assertEquals(itemPagePrice_f, shopCartPrice_f);
     }
 
     @When("I click on Delete button")
     public void i_click_on_Delete_button() {
-        shoppingKartActions.clickOnDelete();
+        shoppingCartActions.clickOnDelete();
     }
 
-    @Then("The Shoopping kart displays {string}")
-    public void a_confirmation_message_is_displayed(String itemsInKart) {
-        String actualItemsInKart = shoppingKartActions.getConfirmationMsg();
-        Assert.assertEquals(actualItemsInKart, itemsInKart);
+    @Then("The Shopping Cart displays {string}")
+    public void a_confirmation_message_is_displayed(String itemsInCart) {
+        String actualItemsInCart = shoppingCartActions.getConfirmationMsg();
+        Assert.assertEquals(actualItemsInCart, itemsInCart);
     }
 }

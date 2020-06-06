@@ -9,7 +9,7 @@ public class ItemPageLocators {
     public WebElement itemPagePrice;
 
     @FindBy(how = How.ID, using = "add-to-cart-button")
-    public WebElement addToKartBtn;
+    public WebElement addToCartBtn;
 
 
 }

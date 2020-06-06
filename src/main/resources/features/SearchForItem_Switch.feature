@@ -10,8 +10,8 @@ Feature: Search for a Switch console
     And click on the search button
     Then I want to click on the first item
     When the item page is displayed I capture the price
-    And I click on add to kart button
-    And I click on Kart button
+    And I click on Add to Cart button
+    And I click on Cart button
     Then I compare the prices
     When I click on Delete button
-    Then The Shoopping kart displays "0"
+    Then The Shopping Cart displays "0"
